@@ -4,50 +4,51 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+	<title>Encrypter</title>
 </head>
 
 <body>
 	<section class="Form">
 		<form>
-			<div class="UncryptedText">
+		 <ul>
+			<li class="UncryptedText">
 				<p class="EncHeader">
-					Text to Encrypt
+					Text to Encrypt:
 				</p>
-				<textarea name="UncryptedText" class="EncText" rows="10">
-					</textarea>
-			</div>
-			<div class="KeyText">
+				<textarea name="UncryptedInput" id="UncryptedInput"></textarea>
+			</li>
+			<li class="KeyText">
 				<p class="EncHeader">
-					Key
+					Key:
 				</p>
-				<textarea name="Key" class="EncText">
-					</textarea>
-			</div>
-			<div class="CryptedText">
+				<input type="text" id="KeyInput" required>
+			</li>
+			<!--<li class="CryptedText">
 				<p class="EncHeader">
 					Result
 				</p>
-				<textarea name="Result" class="EncText">
-					</textarea>
-			</div>
-			<div class="RadioBtn">
+				<input type="text" id="FinalInput">
+			</li>-->
+			<li class="RadioBtn">
 				<p>
-					<input type="radio" name="ConversionType" value="TextForm" id="TextForm">
+					<input type="radio" name="ConversionType" value="TextForm" id="TextForm" required>
 					<label for="TextForm">
 						Text
 					</label>
 				</p>
 				<p>
-					<input type="radio" name="ConversionType" value="NumberForm" id="NumberForm">
+					<input type="radio" name="ConversionType" value="NumberForm" id="NumberForm" required>
 					<label for="NumberForm">
 						Numeric
 					</label>
 				</p>
-			</div>
-			<div class="SubmitBtn">
+			</li>
+			<li class="SubmitBtn">
 				<input type="submit" id="SubmitBtn">
-			</div>
+			</li>
+		 </ul>
 		</form>
 	</section>
 </body>
