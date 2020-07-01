@@ -12,7 +12,7 @@
 <body>
 	<section class="Form">
 		<form>
-		 <ul>
+		 <ul class="General">
 			<li class="UncryptedText">
 				<p class="EncHeader">
 					Text to Encrypt:
@@ -31,19 +31,26 @@
 				</p>
 				<input type="text" id="FinalInput">
 			</li>-->
+			
 			<li class="RadioBtn">
+				<ul class="RadsBtn">
+				<li>
 				<p>
 					<input type="radio" name="ConversionType" value="TextForm" id="TextForm" required>
 					<label for="TextForm">
 						Text
 					</label>
 				</p>
+			</li>
+			<li>
 				<p>
 					<input type="radio" name="ConversionType" value="NumberForm" id="NumberForm" required>
 					<label for="NumberForm">
 						Numeric
 					</label>
 				</p>
+			</li>
+			</ul>
 			</li>
 			<li class="SubmitBtn">
 				<input type="submit" id="SubmitBtn">
