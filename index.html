@@ -11,19 +11,19 @@
 
 <body>
 	<section class="Form">
-		<form>
+		<form onsubmit="UncryptedSetter(event)">
 			<ul class="General">
 				<li class="UncryptedText">
 					<p class="EncHeader">
 						Text to Encrypt:
 					</p>
-					<textarea name="UncryptedInput" id="UncryptedInput" onchange="UncryptedSetter()"></textarea>
+					<textarea name="UncryptedInput" id="UncryptedInput" required></textarea>
 				</li>
 				<li class="KeyText">
 					<p class="EncHeader">
 						Key:
 					</p>
-					<input type="text" id="KeyInput" required>
+					<input type="text" id="KeyInput" >
 				</li>
 				<li class="SubmitBtn">
 					<input type="submit" id="SubmitBtn">
@@ -31,7 +31,7 @@
 			</ul>
 		</form>
 	</section>
-	<script src="./script.js" type="module">
+	<script src="./script.js" type="text/javascript">
 	</script>
 </body>
 
