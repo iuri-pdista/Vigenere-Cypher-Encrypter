@@ -1,8 +1,10 @@
+// import * as Vigenere from "./Vigenere";
 const Encrypt = {
     original: "IurI",
     key: "Guatura",
     encrypted: "QWERTY"
 }
+
 const encryption = (OriginalWord, key, OriginalWord_Lenght, Key_lenght) => {
     let fdsa0 = new Array("Z", "e");
     let fdsa1 = new Array("Z", "e");
@@ -29,7 +31,23 @@ const encryption = (OriginalWord, key, OriginalWord_Lenght, Key_lenght) => {
     }
     return FinalResult;
 }
-Encrypt.original = prompt("Digit a word to be ENCRYPTED");
-let FINAL_ENCRYPTED = new Array(null);
-FINAL_ENCRYPTED = encryption(Encrypt.original.toUpperCase(), Encrypt.key.toUpperCase(), Encrypt.original.length, Encrypt.key.length);
-document.write(FINAL_ENCRYPTED);
+
+function UncryptedSetter(event) {
+    event.preventDefault();
+    let UncryptedValue = document.getElementById("UncryptedInput").value.trim();
+    console.log(UncryptedValue)
+    Encrypt.original = UncryptedValue;
+    
+    let FINAL_ENCRYPTED = new Array("");
+    FINAL_ENCRYPTED = encryption(
+        Encrypt.original.toUpperCase(),
+        Encrypt.key.toUpperCase(),
+        Encrypt.original.length,
+        Encrypt.key.length
+    );
+    let final_enrypted = "";
+    for (let i = 0; i < FINAL_ENCRYPTED.length; i++) {
+        final_enrypted += FINAL_ENCRYPTED[i];
+    }
+    alert(final_enrypted);
+}
