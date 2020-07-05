@@ -1,4 +1,10 @@
-// import * as Vigenere from "./Vigenere";
+document.getElementById("mainForm").addEventListener("submit", event => {
+        event.preventDefault();
+        keySetter();
+        UncryptedSetter();
+    }
+);
+
 const Encrypt = {
     original: "IurI",
     key: "Guatura",
@@ -32,21 +38,31 @@ const encryption = (OriginalWord, key, OriginalWord_Lenght, Key_lenght) => {
     return FinalResult;
 }
 
-function UncryptedSetter(event) {
-    event.preventDefault();
-    let UncryptedValue = document.getElementById("UncryptedInput").value.trim();
+const keySetter = () => {
+    let keyValue = document.getElementById("KeyInput").value;
+    alert(keyValue.toString().trim());
+    Encrypt.key = keyValue;
+    console.log(Encrypt.key);
+}
+
+function UncryptedSetter() {
+    let UncryptedValue = document.getElementById("UncryptedInput").value;
+    UncryptedValue.trim()
     console.log(UncryptedValue)
     Encrypt.original = UncryptedValue;
-    
+
     let FINAL_ENCRYPTED = new Array("");
     FINAL_ENCRYPTED = encryption(
-        Encrypt.original.toUpperCase(),
-        Encrypt.key.toUpperCase(),
+        Encrypt.original.toString().toUpperCase(),
+        Encrypt.key.toString().toUpperCase(),
         Encrypt.original.length,
         Encrypt.key.length
     );
     let final_enrypted = "";
     for (let i = 0; i < FINAL_ENCRYPTED.length; i++) {
+        if ((i != 0) && (i != FINAL_ENCRYPTED.length)) {
+            final_enrypted += " , ";
+        }
         final_enrypted += FINAL_ENCRYPTED[i];
     }
     alert(final_enrypted);

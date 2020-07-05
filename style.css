@@ -41,11 +41,11 @@ input[type= text ]{
     background-color: lightblue;
     transition: width 0.8s ease-out;
 }
-input[type= text ]:hover{
+input[type = text ]:hover{
     border-bottom: 3px solid black;
     font-style: italic;
 }
-input[type= text ]:focus{
+input[type = text ]:focus{
     outline-width: 0px;
     width: 80%;
     border: none;
@@ -54,17 +54,17 @@ input[type= text ]:focus{
 .EncHeader{
     font-size: 1.5rem;
 }
-input[type = submit]{
+button{
     width: 80%;
     box-shadow: 5px 3px 2px black;
     border: 10px black;
     margin: 4%;
     padding: 0.5rem;
 }
-input[type = submit]:hover{
+button:hover{
     box-shadow: -2px -2px 2px black;
 }
-input[type = submit]:focus{
+button:focus{
     box-shadow: none;
     background-color: gray;
     outline-width: 0px;

@@ -11,7 +11,7 @@
 
 <body>
 	<section class="Form">
-		<form onsubmit="UncryptedSetter(event)">
+		<form id="mainForm">
 			<ul class="General">
 				<li class="UncryptedText">
 					<p class="EncHeader">
@@ -19,14 +19,14 @@
 					</p>
 					<textarea name="UncryptedInput" id="UncryptedInput" required></textarea>
 				</li>
-				<li class="KeyText">
+				<li id="key" class="KeyText">
 					<p class="EncHeader">
 						Key:
 					</p>
 					<input type="text" id="KeyInput" >
 				</li>
 				<li class="SubmitBtn">
-					<input type="submit" id="SubmitBtn">
+					<button type="submit" id="SubmitBtn">Submit</button>
 				</li>
 			</ul>
 		</form>
