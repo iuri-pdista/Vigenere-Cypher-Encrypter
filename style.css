@@ -1,3 +1,6 @@
+section{
+    z-index: -2;
+}
 .Form{
     border: 5px;
     background-color: lightblue;
@@ -68,4 +71,19 @@ button:focus{
     box-shadow: none;
     background-color: gray;
     outline-width: 0px;
+}
+.Encrypted{
+    visibility: hidden;
+    padding: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    font-size: 2rem;
+    top: 6rem;
+    left: 5rem;
+    height: 20rem;
+    background-color: black;
+    color: white;
+    border: 1px black;
+    width: 40%;
+    box-shadow: 100 100 100 black;
 }

@@ -2,6 +2,7 @@ document.getElementById("mainForm").addEventListener("submit", event => {
         event.preventDefault();
         keySetter();
         UncryptedSetter();
+        textPrinter();
     }
 );
 
@@ -65,5 +66,12 @@ function UncryptedSetter() {
         }
         final_enrypted += FINAL_ENCRYPTED[i];
     }
+    Encrypt.encrypted = final_enrypted;
     alert(final_enrypted);
+}
+textPrinter = () =>{
+    let encryptedTextDiv = document.getElementById("EncryptedDiv");
+    let encryptedDiv = document.getElementById("encDiv")
+    encryptedTextDiv.innerHTML = Encrypt.encrypted;
+    encryptedDiv.style.visibility = "visible";
 }
