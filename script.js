@@ -75,3 +75,7 @@ textPrinter = () =>{
     encryptedTextDiv.innerHTML = Encrypt.encrypted;
     encryptedDiv.style.visibility = "visible";
 }
+popUpCloser = () =>{
+    let encryptedDiv = document.getElementById("encDiv")
+    encryptedDiv.style.visibility = "hidden";
+}
