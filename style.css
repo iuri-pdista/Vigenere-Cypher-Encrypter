@@ -35,7 +35,8 @@ textarea{
 }
 textarea:focus{
     border: none;
-    background-color: white;
+    border: 1px dashed black;
+    background-color: whitesmoke;
 }
 input[type= text ]{
     width: 30%;
@@ -73,24 +74,24 @@ button:focus.BtnSubmit  {
     outline-width: 0px;
 }
 .Encrypted{
-    visibility: hidden;
+    display: none;
     padding: 3rem;
     font-family: Arial, Helvetica, sans-serif;
     position: fixed;
-    font-size: 2rem;
+    font-size: 1.5rem;
     top: 6rem;
     left: 5rem;
-    height: 20rem;
+    display: flex;
+    flex: 1;
     background-color: black;
     color: white;
-    width: 40%;
     box-shadow: 100 100 100 black;
 }
 .btnClose{
-    margin-top: 8rem;
-    margin-left: 10%;
-    margin-right: 60%;
-    width: 70%;
+    margin-top: 6rem;
+    left: 0px;
+    right: 0px;
+    width: 80%;
     background-color: black;
     color: whitesmoke;
     border: 3px solid white;

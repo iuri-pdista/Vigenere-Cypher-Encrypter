@@ -1,6 +1,6 @@
 # Vigenère's  Cypher Encrypter
 ## A Vigenère's Cypher Encrypter made using JavaScript, HTML and CSS
-Vigenere's cypher, is a type of cypher that sums the numeric value of a letter, based on its position in the alphabet, from a word, with a letter from the in the same postion.
+Vigenere's cypher, is a type of cypher that sums the numeric value of a letter, based on its position in the alphabet, from a word, with a letter in the same postion.
 
 ### For example:
 

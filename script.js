@@ -9,7 +9,8 @@ document.getElementById("mainForm").addEventListener("submit", event => {
 const Encrypt = {
     original: "IurI",
     key: "Guatura",
-    encrypted: "QWERTY"
+    encrypted: "QWERTY",
+    encryptedChar: ["Sweet" , "Home" ,"Alabama"]
 }
 
 const encryption = (OriginalWord, key, OriginalWord_Lenght, Key_lenght) => {
@@ -32,11 +33,83 @@ const encryption = (OriginalWord, key, OriginalWord_Lenght, Key_lenght) => {
     for (count = 0; count < OriginalWord_Lenght; count++) {
         FinalResult[count] = fdsa0[count] + fdsa1[count1];
         count1++;
+        if (FinalResult[count] > 26) {
+            FinalResult[count] -= 26;
+        }
+
         if (count1 == Key_lenght) {
             count1 = 0;
         }
     }
+    Encrypt.encryptedChar = charEncryption(FinalResult);
     return FinalResult;
+}
+
+const charEncryption = (numericEncrypted) => {
+    let charEncrypted = new Array("Z", "e");
+    for (let i = 0; i < numericEncrypted.length; i++){
+        charEncrypted[i] = alphabet(numericEncrypted[i]);          
+    }
+    charEncrypted = charEncrypted.toString();
+    alert(charEncrypted);
+    return charEncrypted;
+}
+
+const alphabet = (position) => {
+    switch(position){
+        case 1:
+            return "a";
+        case 2:
+            return "b";
+        case 3:
+            return "c";
+        case 4:
+            return "d";
+        case 5:
+            return "e";
+        case 6:
+            return "f";
+        case 7:
+            return "g";
+        case 8:
+            return "h";
+        case 9:
+            return "i";
+        case 10:
+            return "j";
+        case 11:
+            return "k";
+        case 12:
+            return "l";
+        case 13:
+            return "m";
+        case 14:
+            return "n";
+        case 15:
+            return "o";
+        case 16:     
+            return "p";   
+        case 17:
+            return "q";
+        case 18:
+            return "r";
+        case 19:
+            return "s";
+        case 20:
+            return "t";
+        case 21:
+            return "u";
+        case 22:
+            return "v";
+        case 23:
+            return "w";
+        case 24:
+            return "x";
+        case 25:
+            return "y";
+        case 26:
+            return "z";
+    }        
 }
 
 const keySetter = () => {
@@ -69,13 +142,16 @@ function UncryptedSetter() {
     Encrypt.encrypted = final_enrypted;
     alert(final_enrypted);
 }
+
 textPrinter = () =>{
     let encryptedTextDiv = document.getElementById("EncryptedDiv");
-    let encryptedDiv = document.getElementById("encDiv")
-    encryptedTextDiv.innerHTML = Encrypt.encrypted;
-    encryptedDiv.style.visibility = "visible";
+    let encryptedDiv = document.getElementById("encDiv");
+    /*encryptedTextDiv.innerHTML = "Numeric form: " + Encrypt.encrypted;
+    encryptedTextDiv.innerHTML = " String  form: " + Encrypt.encryptedChar;*/
+    encryptedDiv.style.display = "block";
 }
-popUpCloser = () =>{
-    let encryptedDiv = document.getElementById("encDiv")
-    encryptedDiv.style.visibility = "hidden";
+
+popUpCloser = () => {
+    let encryptedDiv = document.getElementById("encDiv");
+    encryptedDiv.style.display = "none"; 
 }
