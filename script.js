@@ -57,6 +57,12 @@ const charEncryption = (numericEncrypted) => {
 
 const keySetter = () => {
     let keyValue = document.getElementById("KeyInput").value;
+    let keyValueArray = keyValue.split(" ");
+    let arrayLenght = keyValueArray.length;
+    alert(arrayLenght);
+    if (arrayLenght != 1){
+        alert("The key must contain only alphabetic characters");
+    }
     alert(keyValue.toString().trim());
     Encrypt.key = keyValue;
     console.log(Encrypt.key);

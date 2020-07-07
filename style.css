@@ -74,7 +74,7 @@ button:focus.BtnSubmit  {
     outline-width: 0px;
 }
 .Encrypted{
-    display: none;
+    display: none !important;
     padding: 3rem;
     font-family: Arial, Helvetica, sans-serif;
     position: fixed;
