@@ -55,6 +55,66 @@ const charEncryption = (numericEncrypted) => {
     return charEncrypted;
 }
 
+const keySetter = () => {
+    let keyValue = document.getElementById("KeyInput").value;
+    alert(keyValue.toString().trim());
+    Encrypt.key = keyValue;
+    console.log(Encrypt.key);
+}
+
+function UncryptedSetter() {
+    let UncryptedValue = document.getElementById("UncryptedInput").value;
+    UncryptedValue.trim()
+    console.log(UncryptedValue)
+    Encrypt.original = UncryptedValue;
+
+    let FINAL_ENCRYPTED = new Array("");
+    FINAL_ENCRYPTED = encryption(
+        Encrypt.original.toString().toUpperCase(),
+        Encrypt.key.toString().toUpperCase(),
+        Encrypt.original.length,
+        Encrypt.key.length
+    );
+    let final_enrypted = "";
+    for (let i = 0; i < FINAL_ENCRYPTED.length; i++) {
+        if ((i != 0) && (i != FINAL_ENCRYPTED.length)) {
+            final_enrypted += "/";
+        }
+        if((i % 10) == 0){
+            final_enrypted += "<br>";
+        }
+        final_enrypted += FINAL_ENCRYPTED[i];
+    }
+    Encrypt.encrypted = final_enrypted;
+    alert(final_enrypted);
+}
+
+textPrinter = () =>{
+    let encryptedTextDiv = document.getElementById("EncryptedDiv");
+    let encryptedDiv = document.getElementById("encDiv");
+    encryptedTextDiv.innerHTML = "Numeric form: " + Encrypt.encrypted;
+    let encryptedForm = document.getElementById("encryptionForm");
+    encryptedForm.reset();
+    encryptedDiv.style.display = "block";
+}
+
+textChanger = () =>{
+    let encryptedTextDiv = document.getElementById("EncryptedDiv");
+    let encryptedDiv = document.getElementById("encDiv");
+    /*let encryptedCharArray = Encrypt.encryptedChar.split(",");
+    for (let i = 0; i < encryptedCharArray.length; i++){
+        Encrypt.encryptedChar += encryptedCharArray[i];
+    }*/
+    encryptedTextDiv.innerHTML = " String  form: " + "<br>" + Encrypt.encryptedChar;
+    encryptedDiv.style.display = "block";
+    encryptedForm.reset();
+}
+
+popUpCloser = () => {
+    let encryptedDiv = document.getElementById("encDiv");
+    encryptedDiv.style.display = "none"; 
+}
+
 const alphabet = (position) => {
     switch(position){
         case 1:
@@ -110,48 +170,4 @@ const alphabet = (position) => {
         case 26:
             return "z";
     }        
-}
-
-const keySetter = () => {
-    let keyValue = document.getElementById("KeyInput").value;
-    alert(keyValue.toString().trim());
-    Encrypt.key = keyValue;
-    console.log(Encrypt.key);
-}
-
-function UncryptedSetter() {
-    let UncryptedValue = document.getElementById("UncryptedInput").value;
-    UncryptedValue.trim()
-    console.log(UncryptedValue)
-    Encrypt.original = UncryptedValue;
-
-    let FINAL_ENCRYPTED = new Array("");
-    FINAL_ENCRYPTED = encryption(
-        Encrypt.original.toString().toUpperCase(),
-        Encrypt.key.toString().toUpperCase(),
-        Encrypt.original.length,
-        Encrypt.key.length
-    );
-    let final_enrypted = "";
-    for (let i = 0; i < FINAL_ENCRYPTED.length; i++) {
-        if ((i != 0) && (i != FINAL_ENCRYPTED.length)) {
-            final_enrypted += " , ";
-        }
-        final_enrypted += FINAL_ENCRYPTED[i];
-    }
-    Encrypt.encrypted = final_enrypted;
-    alert(final_enrypted);
-}
-
-textPrinter = () =>{
-    let encryptedTextDiv = document.getElementById("EncryptedDiv");
-    let encryptedDiv = document.getElementById("encDiv");
-    /*encryptedTextDiv.innerHTML = "Numeric form: " + Encrypt.encrypted;
-    encryptedTextDiv.innerHTML = " String  form: " + Encrypt.encryptedChar;*/
-    encryptedDiv.style.display = "block";
-}
-
-popUpCloser = () => {
-    let encryptedDiv = document.getElementById("encDiv");
-    encryptedDiv.style.display = "none"; 
 }

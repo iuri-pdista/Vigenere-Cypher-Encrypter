@@ -37,6 +37,24 @@
 		</p>
 		<div id="EncryptedDiv">
 		</div>
+		<div class="radioPopupBtn">
+			<form id="encryptionForm">
+				<ul class="encryptionForm">
+					<li>
+						<input type="radio" name="ecryptionType" id="numeric" value="numeric" checked onchange="textPrinter()">
+						<label for="numeric">
+							Numeric Form
+						</label>
+					</li>
+					<li>
+						<input type="radio" name="ecryptionType" id="char" value="char" onchange="textChanger()">
+						<label for="char">
+							Character Form
+						</label>
+					</li>
+				</ul>	
+			</form>
+		</div>
 		<button type="button" class="btnClose" onclick="popUpCloser()">
 			<h6>
 				Close
