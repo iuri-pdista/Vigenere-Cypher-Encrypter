@@ -101,7 +101,7 @@ textPrinter = () =>{
     encryptedTextDiv.innerHTML = "Numeric form: " + Encrypt.encrypted;
     let encryptedForm = document.getElementById("encryptionForm");
     encryptedForm.reset();
-    encryptedDiv.style.display = "block";
+    encryptedDiv.style.display = "block !important";
 }
 
 textChanger = () =>{
