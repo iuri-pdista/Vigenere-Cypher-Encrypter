@@ -112,13 +112,13 @@ textChanger = () =>{
         Encrypt.encryptedChar += encryptedCharArray[i];
     }*/
     encryptedTextDiv.innerHTML = " String  form: " + "<br>" + Encrypt.encryptedChar;
-    encryptedDiv.style.display = "block";
+    encryptedDiv.style.display = "block !important";
     encryptedForm.reset();
 }
 
 popUpCloser = () => {
     let encryptedDiv = document.getElementById("encDiv");
-    encryptedDiv.style.display = "none"; 
+    encryptedDiv.style.display = "none !important"; 
 }
 
 const alphabet = (position) => {
