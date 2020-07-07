@@ -51,7 +51,6 @@ const charEncryption = (numericEncrypted) => {
         charEncrypted[i] = alphabet(numericEncrypted[i]);          
     }
     charEncrypted = charEncrypted.toString();
-    alert(charEncrypted);
     return charEncrypted;
 }
 
@@ -59,11 +58,11 @@ const keySetter = () => {
     let keyValue = document.getElementById("KeyInput").value;
     let keyValueArray = keyValue.split(" ");
     let arrayLenght = keyValueArray.length;
-    alert(arrayLenght);
+    console.log(arrayLenght);
     if (arrayLenght != 1){
-        alert("The key must contain only alphabetic characters");
+        akert("The key must contain only alphabetic characters");
     }
-    alert(keyValue.toString().trim());
+    console.log(keyValue.toString().trim());
     Encrypt.key = keyValue;
     console.log(Encrypt.key);
 }
@@ -92,33 +91,45 @@ function UncryptedSetter() {
         final_enrypted += FINAL_ENCRYPTED[i];
     }
     Encrypt.encrypted = final_enrypted;
-    alert(final_enrypted);
+    console.log(final_enrypted);
 }
 
 textPrinter = () =>{
+    let favicon = document.getElementById("favicon");
+    favicon.href = "assets/opened.ico";
     let encryptedTextDiv = document.getElementById("EncryptedDiv");
     let encryptedDiv = document.getElementById("encDiv");
-    encryptedTextDiv.innerHTML = "Numeric form: " + Encrypt.encrypted;
+    let btnPopUp = document.getElementById("btnPopUp");
+    encryptedTextDiv.style.fontSize = "smaller";
+    if (Encrypt.encrypted.length >= 50){
+        btnPopUp.style.marginBottom = "8rem";
+    }
+    if (Encrypt.encrypted.length <= 30){
+        alert("teste");
+        encryptedTextDiv.style.fontSize = "larger"
+    }
+    encryptedTextDiv.innerHTML = "<h6>Numeric form: " + Encrypt.encrypted;
     let encryptedForm = document.getElementById("encryptionForm");
     encryptedForm.reset();
-    encryptedDiv.style.display = "block !important";
+    encryptedDiv.classList.remove("hide");
 }
 
 textChanger = () =>{
     let encryptedTextDiv = document.getElementById("EncryptedDiv");
     let encryptedDiv = document.getElementById("encDiv");
+    favicon.href = "assets/opened.ico";
     /*let encryptedCharArray = Encrypt.encryptedChar.split(",");
     for (let i = 0; i < encryptedCharArray.length; i++){
         Encrypt.encryptedChar += encryptedCharArray[i];
     }*/
-    encryptedTextDiv.innerHTML = " String  form: " + "<br>" + Encrypt.encryptedChar;
-    encryptedDiv.style.display = "block !important";
+    encryptedTextDiv.innerHTML = " <h6>String  form: " + "<br>" + Encrypt.encryptedChar;
+    encryptedDiv.classList.remove("hide");
     encryptedForm.reset();
 }
 
 popUpCloser = () => {
     let encryptedDiv = document.getElementById("encDiv");
-    encryptedDiv.style.display = "none !important"; 
+    encryptedDiv.classList.add("hide");
 }
 
 const alphabet = (position) => {
