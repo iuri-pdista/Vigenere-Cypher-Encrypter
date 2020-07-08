@@ -105,7 +105,6 @@ textPrinter = () =>{
         btnPopUp.style.marginBottom = "8rem";
     }
     if (Encrypt.encrypted.length <= 30){
-        alert("teste");
         encryptedTextDiv.style.fontSize = "larger"
     }
     encryptedTextDiv.innerHTML = "<h6>Numeric form: " + Encrypt.encrypted;
@@ -130,6 +129,8 @@ textChanger = () =>{
 popUpCloser = () => {
     let encryptedDiv = document.getElementById("encDiv");
     encryptedDiv.classList.add("hide");
+    let favicon = document.getElementById("favicon");
+    favicon.href = "./assets/favicon.ico";
 }
 
 const alphabet = (position) => {
